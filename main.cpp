@@ -1,11 +1,12 @@
 #include<stdio.h>
 int Recursive(int num1,int num2,int num3) {
 	num2++;
-	num3=1072* num2;
+	num3 = 1072 * num2;
 	if (num1 >= num3) {
 		return num1;
 	}
-	return (Recursive(num1 * 2 - 50 + num1,num2,num3));
+	return (Recursive(num1 * 2 - 50 + 100,num2,num3));
+	
 }
 
 int main() {
