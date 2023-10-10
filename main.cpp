@@ -1,30 +1,17 @@
 #include<stdio.h>
-template <typename Type>
-
-Type min(Type a, Type b) {
-	if (a >= b)
-	{
-		return static_cast<Type>(a);
+int Recursive(int num) {
+	if (num >= 1072) {
+		return num;
 	}
-	else
-	{
-		return static_cast<Type>(b);
-	}
-}
-template <>
-char min<char>(char a, char b) {
-	return printf("数字は代入できません");
+	return (Recursive(num * 2 - 50 + num));
 }
 
 int main() {
-	
-	printf("%d\n", min<int>(30, 50));
+	int num = 100; //再帰的な賃金
 
-	printf("%f\n", min<float>(3.0f, 2.0f));
+	int result; //計算結果
 
-	printf("%lf\n", min<double>(3.13f, 5.13f));
-
-	min<char>('A', 'B');
-
+	result = Recursive(num);
+	printf("%d　再帰的な賃金\n", result);
 	return 0;
 }
