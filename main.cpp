@@ -1,21 +1,32 @@
 #include<stdio.h>
-int Recursive(int num1,int num2,int num3) {
-	num2++;
-	num3 = 1072 * num2;
-	if (num1 >= num3) {
-		return num1;
-	}
-	return (Recursive(num1 * 2 - 50 + 100,num2,num3));
-	
+#include<Windows.h>
+//macとかのUnix系OSの場合
+//#include<unistd.h>
+
+typedef void (*PFunc)(int*);
+//コールバック関数
+void DispResult(int *s) {
+	printf("%d待って実行されたよ\n", *s);
+}
+
+void setTimeout(PFunc p, int second) {
+	//コールバック関数を呼び出す
+	Sleep(second*1000);
+	//macとかUnix系OSの場合
+	//sleep(second);
+
+
+	p(&second);
 }
 
 int main() {
-	int recusivewage = 100; //再帰的な賃金
-	int i = 1; //1時間がたっていくにつれて１増加する変数
-	int generalwage = 0;  //一般賃金
-	int result; //計算結果
-
-	result = Recursive(recusivewage,i,generalwage);
-	printf("%d　再帰的な賃金\n", result);
+	printf("start\n");
+	char name[] = "奇数";
+	scanf_s("%s", name,8);
+	printf("%s", name);
+	
+	PFunc p;
+	p = DispResult;
+	setTimeout(p, 5);
 	return 0;
 }
