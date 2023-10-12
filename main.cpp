@@ -21,8 +21,8 @@ void setTimeout(PFunc p, int second) {
 
 int main() {
 	printf("start\n");
-	char name[] = "奇数";
-	scanf_s("%s", name,8);
+	char name[8];
+	scanf_s("%s", name);
 	printf("%s", name);
 	
 	PFunc p;
