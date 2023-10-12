@@ -1,14 +1,14 @@
 #include<stdio.h>
-int Recursive(int num1,int num2,int num3,int num4) {
-	num4++;
-	num2 = num1 + num2;
-	num3 = 1072 * num4;
-	if ( num3<=num2 )
+int Recursive(int recusivewage,int keep,int generalwage,int num) {
+	num++;
+	keep = recusivewage + keep;
+	generalwage = 1072 * num;
+	if ( generalwage<=keep )
 	{
-		return num2;
+		return keep;
 	}
 	
-	return num1=Recursive(num1 * 2 - 50,num2,num3,num4);
+	return recusivewage=Recursive(recusivewage * 2 - 50,keep,generalwage,num);
 	
 }
 
