@@ -1,7 +1,10 @@
 #include<stdio.h>
 #include<Windows.h>
+#include<string.h>
 //macとかのUnix系OSの場合
 //#include<unistd.h>
+
+
 
 typedef void (*PFunc)(int*);
 //コールバック関数
@@ -21,12 +24,17 @@ void setTimeout(PFunc p, int second) {
 
 int main() {
 	printf("start\n");
-	char name[8];
-	scanf_s("%s", name);
-	printf("%s", name);
+	char name[8]="奇数";
+	char name2[8] = "奇数";
+	scanf_s("%s", name,8);
+	if (strcmp(name,name2)==0)
+	{
+		PFunc p;
+		p = DispResult;
+		setTimeout(p, 5);
+	}
 	
-	PFunc p;
-	p = DispResult;
-	setTimeout(p, 5);
+	
+	
 	return 0;
 }
