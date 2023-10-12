@@ -2,12 +2,12 @@
 int Recursive(int num1,int num2,int num3,int num4) {
 	num4++;
 	num2 = num1 + num2;
-	
+	num3 = 1072 * num4;
 	if ( num3<=num2 )
 	{
 		return num2;
 	}
-	num3 = 1072 * num4;
+	
 	return num1=Recursive(num1 * 2 - 50,num2,num3,num4);
 	
 }
