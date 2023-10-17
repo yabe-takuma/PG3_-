@@ -1,16 +1,29 @@
 #include<stdio.h>
 #include<Windows.h>
 #include<string.h>
+#include<time.h>
 //macとかのUnix系OSの場合
 //#include<unistd.h>
 
-#define INPUT_STR "奇数"
 
 
 typedef void (*PFunc)(int*);
+
+void Judgement(int num) {
+	if (num == 1 ||num== 3 || num==5)
+	{
+		printf("答えは%d半でした。", num);
+	}
+	else if (num == 2 || num==4 || num==6)
+	{
+		printf("答えは%d丁でした。", num);
+	}
+}
+
 //コールバック関数
 void DispResult(int *s) {
-	printf("%d待って実行されたよ\n", *s);
+	//printf("%d待って実行されたよ\n", *s);
+	
 }
 
 void setTimeout(PFunc p, int second) {
@@ -25,17 +38,16 @@ void setTimeout(PFunc p, int second) {
 
 int main() {
 	printf("start\n");
-	char name[8]="奇数";
-	char name2[8] = "奇数";
+	time_t currentTime = time(nullptr);
+	srand((time_t)currentTime);
+	char name[8];
+	int number = rand()  %6+1;
 	scanf_s("%s", name,8);
-	if (strcmp(name,"奇数") == 0)
-	{
-		printf("%s", name);
-	}
-	PFunc p;
-	p = DispResult;
-	setTimeout(p, 5);
 	
+	PFunc p;
+	p=DispResult;
+	setTimeout(p, 3);
+	Judgement(number);
 	
 	return 0;
 }
