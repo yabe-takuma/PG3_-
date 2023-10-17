@@ -4,6 +4,7 @@
 //macとかのUnix系OSの場合
 //#include<unistd.h>
 
+#define INPUT_STR "奇数"
 
 
 typedef void (*PFunc)(int*);
@@ -27,13 +28,13 @@ int main() {
 	char name[8]="奇数";
 	char name2[8] = "奇数";
 	scanf_s("%s", name,8);
-	if (strcmp(name,name2)==0)
+	if (strcmp(name,"奇数") == 0)
 	{
-		PFunc p;
-		p = DispResult;
-		setTimeout(p, 5);
+		printf("%s", name);
 	}
-	
+	PFunc p;
+	p = DispResult;
+	setTimeout(p, 5);
 	
 	
 	return 0;
