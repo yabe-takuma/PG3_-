@@ -19,12 +19,12 @@ int main() {
 		return i;
 		
 		};
-	auto fx2 = [](int i,) {
+	auto fx2 = [](int* p,int second) {
 		Sleep(second * 1000);
 		
 
 
-		i(&second); 
+		p(&second); 
 		};
 
 	printf("%d\n", fx(2));
