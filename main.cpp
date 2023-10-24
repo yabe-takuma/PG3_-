@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include <functional>
+#include<Windows.h>
 
 typedef void (*PFunc)(int*);
 
@@ -19,15 +20,14 @@ int main() {
 		return i;
 		
 		};
-	auto fx2 = [](int* p,int second) {
+	auto fx2 = [](int i,int second) {
 		Sleep(second * 1000);
 		
 
 
-		p(&second); 
+		return i;
 		};
 
-	printf("%d\n", fx(2));
-	printf("%d", fx2(2));
+	
 	return 0;
 }
