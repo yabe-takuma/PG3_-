@@ -19,12 +19,12 @@ int DiseRecyrsive(int n) {
 void DispResult(int* s) {
 	int num = rand() % 6 + 1;
 	if (num == 2 || num == 4 || num == 6) {
-		printf("答えは%d丁(1)でした。\n", num, *s);
+		printf("答えは%d丁(1)でした。\n", num);
 	}
 	if (num == 1 || num == 3 || num == 5) {
-		printf("答えは%d半(0)でした。\n", num, *s);
+		printf("答えは%d半(0)でした。\n", num);
 	}
-
+	s;
 }
 
 void setTimeout(PFunc p, int second) {
@@ -40,18 +40,23 @@ void setTimeout(PFunc p, int second) {
 
 int main() {
 	
-	PFunc p;
+	
 
 
-	std::function<int(int)> fx = [=](int i) {return i;};
-	auto fx2 = [](int i) {return i;};
+	std::function<PFunc(PFunc)> fx = [=](PFunc p) {return p = DispResult; };
+	auto fx2 = [](PFunc p) {return setTimeout(p, 3); };
 
 	int name = 0;
 
 
 	scanf_s("%d", &name);
 	name = DiseRecyrsive(name);
-	fx(1);
-	fx2(1);
+
+	
+	
+	PFunc p;
+
+	p=fx(p);
+	fx2(p);
 	return 0;
 }
