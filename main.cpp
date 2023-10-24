@@ -15,6 +15,29 @@ int DiseRecyrsive(int n) {
 
 }
 
+//コールバック関数
+void DispResult(int* s) {
+	int num = rand() % 6 + 1;
+	if (num == 2 || num == 4 || num == 6) {
+		printf("答えは%d丁(1)でした。\n", num, *s);
+	}
+	if (num == 1 || num == 3 || num == 5) {
+		printf("答えは%d半(0)でした。\n", num, *s);
+	}
+
+}
+
+void setTimeout(PFunc p, int second) {
+
+	//コールバック関数を呼び出す
+	Sleep(second * 1000);
+	//macとかUnix系OSの場合
+	//sleep(second);
+
+
+	p(&second);
+}
+
 int main() {
 	
 	PFunc p;
