@@ -20,24 +20,8 @@ int main() {
 	PFunc p;
 
 
-	std::function<int(int)> fx = [=](int i) {
-		int num = rand() % 6 + 1;
-		if (num == 2 || num == 4 || num == 6) {
-			printf("答えは%d丁(1)でした。\n", num, i);
-		}
-		if (num == 1 || num == 3 || num == 5) {
-			printf("答えは%d半(0)でした。\n", num, i);
-		}
-		return i;
-		
-		};
-	auto fx2 = [](int i,int second) {
-		Sleep(second * 1000);
-		
-
-
-		return i;
-		};
+	std::function<int(int)> fx = [=](int i) {return i;};
+	auto fx2 = [](int i) {return i;};
 
 	int name = 0;
 
@@ -45,6 +29,6 @@ int main() {
 	scanf_s("%d", &name);
 	name = DiseRecyrsive(name);
 	fx(1);
-	fx2(1, 3);
+	fx2(1);
 	return 0;
 }
