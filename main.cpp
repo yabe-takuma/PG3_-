@@ -3,7 +3,7 @@
 
 int main() {
 	
-
+	PFunc p;
 
 
 	std::function<int(int)> fx = [=](int *s) {
