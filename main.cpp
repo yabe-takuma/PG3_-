@@ -28,7 +28,11 @@ int main() {
 		return i;
 		};
 
+	int name = 0;
 
+
+	scanf_s("%d", &name);
+	name = DiseRecyrsive(name);
 	
 	return 0;
 }
