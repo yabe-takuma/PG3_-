@@ -54,9 +54,9 @@ int main() {
 
 	
 	
-	PFunc p;
+	PFunc p=0;
 
-	p=fx(p);
+	fx(p);
 	fx2(p);
 	return 0;
 }
