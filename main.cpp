@@ -4,6 +4,17 @@
 
 typedef void (*PFunc)(int*);
 
+int DiseRecyrsive(int n) {
+
+	if (n == 0 || n == 1) {
+		return 0;
+	}
+
+	scanf_s("%d", &n);
+	return DiseRecyrsive(n);
+
+}
+
 int main() {
 	
 	PFunc p;
@@ -33,6 +44,7 @@ int main() {
 
 	scanf_s("%d", &name);
 	name = DiseRecyrsive(name);
-	
+	fx(1);
+	fx2(1, 3);
 	return 0;
 }
