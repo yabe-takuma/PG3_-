@@ -6,8 +6,11 @@
 //#include<unistd.h>
 
 
-
-typedef void (*PFunc)(int*);
+// void 関数型
+// (*PFunc) 関数ポインタの名前
+// (int*) 関数の引数
+// void ○○(int*)の形式の関数のポインタを受け取れる関数ポインタを定義してる
+typedef void (*PFunc)();
 
 
 
@@ -37,8 +40,8 @@ void Answer() {
 
 void Judgement() {
 	printf("0か1を入力してください\n");
-	time_t currentTime = time(nullptr);
-	srand((time_t)currentTime);
+	int currentTime = time(nullptr);
+	srand(currentTime);
 	int name = 0;
 
 
@@ -61,13 +64,13 @@ void Dinghan(PFunc p, int second) {
 	//sleep(second);
 
 	// 結果表示
-	p(&second);
+	 p();
 }
 
 int main() {
 
 	PFunc p;
-	p =Answer();
+	p =Answer; // 関数ポインタに代入するときは関数名そのまま入れる
 	Dinghan(p, 3);
 
 	
