@@ -23,44 +23,56 @@ int DiseRecyrsive(int n) {
 }
 
 //コールバック関数
-void DispResult(int *s) {
+void Answer() {
 	int num = rand() % 6 + 1;
-	if (num == 2 || num == 4 || num == 6) {
-		printf("答えは%d丁(1)でした。\n", num, *s);
+	if (num%2==0) {
+		 printf("答えは%d丁(1)でした。\n",num);
 	}
-	if (num == 1 || num == 3 || num == 5) {
-		printf("答えは%d半(0)でした。\n", num, *s);
+	else {
+		 printf("答えは%d半(0)でした。\n",num);
 	}
+
 
 }
 
-void setTimeout(PFunc p, int second) {
+void Judgement() {
+	printf("0か1を入力してください\n");
+	time_t currentTime = time(nullptr);
+	srand((time_t)currentTime);
+	int name = 0;
+
+
+
+	scanf_s("%d", &name);
+	name = DiseRecyrsive(name);
+
+}
+
+void Dinghan(PFunc p, int second) {
+	// プレイヤーの入力処理、奇数or偶数入力させる
 	
-	//コールバック関数を呼び出す
+	Judgement();
+	
+	//コールバック関数を呼び出す, 3秒まつ
 	Sleep(second*1000);
+	
+	
 	//macとかUnix系OSの場合
 	//sleep(second);
 
-
+	// 結果表示
 	p(&second);
 }
 
 int main() {
 
-
-
-	printf("0か1を入力してください\n");
-	time_t currentTime = time(nullptr);
-	srand((time_t)currentTime);
-	int name=0;
-	
-
-	scanf_s("%d", &name);
-	name= DiseRecyrsive(name);
-	
 	PFunc p;
-	p = DispResult;
-	setTimeout(p, 3);
+	p =Answer();
+	Dinghan(p, 3);
+
+	
+	
+	
 	
 	
 	
