@@ -2,6 +2,7 @@
 #include"MyClass.h"
 #include"Enemy.h"
 
+typedef void (*PFunc)();
 
 
 //コールバック関数
@@ -18,9 +19,7 @@ void Answer() {
 }
 
 void Dinghan(PFunc p, int second) {
-	// プレイヤーの入力処理、奇数or偶数入力させる
-
-	Judgement();
+	
 
 	//コールバック関数を呼び出す, 3秒まつ
 	Sleep(second * 1000);
