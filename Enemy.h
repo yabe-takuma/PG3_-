@@ -3,9 +3,9 @@ class Enemy
 {
 public:
 	enum class Phase {
-		Proximity,
-		Shooting,
-		Leave,
+		kProximity,
+		kShooting,
+		kLeave,
 	};
 
 	void Initialize();
@@ -21,8 +21,8 @@ public:
 	static const int Timer = 10;
 
 private:
-	Phase phase_;
-	static void (Enemy::* spFuncTable[])();
+	Phase phase_=phase_;
+	static void (Enemy::*spFuncTable[])();
 	int timer_;
 };
 

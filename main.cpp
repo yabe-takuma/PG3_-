@@ -3,8 +3,10 @@
 #include"Enemy.h"
 int main() {
 
-	Enemy enemy;
-	enemy.Update();
+	Enemy* enemy=new Enemy();
+	enemy->Initialize();
+
+	enemy->Update();
 	
 	return 0;
 }
