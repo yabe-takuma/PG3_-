@@ -2,6 +2,21 @@
 #include"MyClass.h"
 #include"Enemy.h"
 
+
+
+//コールバック関数
+void Answer() {
+	int num = rand() % 6 + 1;
+	if (num % 2 == 0) {
+		printf("答えは%d丁(1)でした。\n", num);
+	}
+	else {
+		printf("答えは%d半(0)でした。\n", num);
+	}
+
+
+}
+
 void Dinghan(PFunc p, int second) {
 	// プレイヤーの入力処理、奇数or偶数入力させる
 
