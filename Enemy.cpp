@@ -16,37 +16,37 @@ void Enemy::Initialize()
 void Enemy::Update()
 {
 	timer_++;
-	
-	
-	(this->*spFuncTable[static_cast<size_t>(phase_)])();
 
+	while (timerflag){
+		(this->*spFuncTable[static_cast<size_t>(phase_)])();
+}
 	
 }
 
 void Enemy::Proximity()
 {
 	
-	printf("近接");
-	if (timer_ >= 10) {
+	
+
+		printf("近接");
 		phase_ = Phase::kShooting;
-		timer_ = 0;
-	}
+		
 }
 
 void Enemy::Shooting()
 {
-	if (timer_ >= 10) {
+	
 		printf("射撃");
 		phase_ = Phase::kLeave;
-		timer_ = 0;
-	}
+		
 
 }
 
 void Enemy::Leave()
 {
-	if (timer_ >= 10) {
+	
 		printf("離脱");
-	}
+		timerflag = false;
+	
 }
 

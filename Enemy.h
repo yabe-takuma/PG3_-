@@ -24,5 +24,7 @@ private:
 	Phase phase_=phase_;
 	static void (Enemy::*spFuncTable[])();
 	int timer_;
+
+	bool timerflag = true;
 };
 
