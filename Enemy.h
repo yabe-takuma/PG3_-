@@ -1,4 +1,8 @@
 #pragma once
+#include<Windows.h>
+
+typedef void (*PFunc)();
+
 class Enemy
 {
 public:
@@ -18,13 +22,17 @@ public:
 
 	void Leave();
 
-	static const int Timer = 10;
+	void Answer();;
+
+	void Dinghan(PFunc p, int second,int num);
 
 private:
 	Phase phase_=phase_;
 	static void (Enemy::*spFuncTable[])();
-	int timer_;
+
 
 	bool timerflag = true;
+
+	PFunc p;
 };
 
