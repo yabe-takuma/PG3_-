@@ -10,7 +10,7 @@ public:
 	Min(Type1 num1, Type2 num2) :num1(num1), num2(num2) {};
 
 	Type1 Minjugement() {
-		if (num1 >= num2)
+		if (num1 <= num2)
 		{
 			return static_cast<Type1>(num1);
 		}
