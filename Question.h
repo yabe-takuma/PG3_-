@@ -3,15 +3,22 @@ class Question
 {
 public:
 
-	enum 
+	enum class Phase {
+		kGenerate,
+		kAttack,
+		kDestruction,
+	};
 
 	void Generate();
 
 	void Attack();
 
-	void destruction();
+	void Destruction();
 
 private:
+	Phase phase_;
+
+	static void (Question::* spPhaseTable[])();
 
 };
 
