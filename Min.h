@@ -16,7 +16,7 @@ public:
 		}
 		else
 		{
-			return static_cast<Type1>(num2);
+			return static_cast<Type2>(num2);
 		}
 		return 0;
 	}
