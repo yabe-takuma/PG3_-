@@ -21,7 +21,7 @@ void Dinghan(Enemy* enemy,int second) {
 
 int main() {
 
-	bool jugementflag = true;
+	
 	
 	Enemy* enemy = new Enemy();
 
