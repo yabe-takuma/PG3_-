@@ -8,5 +8,5 @@ void Rectangle::Size()
 
 void Rectangle::Draw()
 {
-	printf("%f", radius);
+	printf("%f\n", radius);
 }

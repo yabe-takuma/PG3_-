@@ -9,7 +9,7 @@ public:
 	void Draw();
 
 private:
-	int radius = 30.0f;
+	float radius = 30.0f;
 
 	
 

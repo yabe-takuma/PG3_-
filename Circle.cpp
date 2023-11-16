@@ -8,5 +8,5 @@ void Circle::Size()
 
 void Circle::Draw()
 {
-	printf("%f",radius);
+	printf("%f\n",radius);
 }

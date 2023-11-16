@@ -11,7 +11,7 @@ public:
 private:
 	float radius = 30.0f;
 
-	float pi = 3.14;
+	float pi = 3.14f;
 
 };
 
