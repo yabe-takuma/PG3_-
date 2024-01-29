@@ -33,7 +33,7 @@ int main() {
 	for (list<const char*>::iterator itr = jy.begin(); itr != jy.end(); ++itr)
 
 	{
-		//jy.push_back("Takanawagertoway");
+		
 		if (*itr == "Tamati"&&i==2)
 		{
 			
@@ -58,26 +58,7 @@ int main() {
 		}
 		printf("\n");
 	}
-	//list<int> lst{ 1,3,5,7,10 };
-	////lst.push_front(114);
-	//for (list<int>::iterator itr = lst.begin(); itr != lst.end(); ++itr)
-	//{
-	//	
-
-	//	if (*itr == 3)
-	//	{
-	//	
-	//		
-	//		itr = lst.insert(itr, 0);
-	//		++itr;
-	//	}
-	//	
-	//}
-
-	//for (list<int>::iterator itr = lst.begin(); itr != lst.end(); ++itr)
-	//{
-	//	cout << *itr << "\n";
-	//}
+	
 	
 
 
