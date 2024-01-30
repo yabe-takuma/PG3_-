@@ -19,17 +19,7 @@ void thread3()
 int main() {
 	int num = 3;
 
-	std::function<void(int)> Triple = [=](int num)
-		{
-			num *= 3;
-			printf("num*3: %d\n", num);
-		};
-
-	std::function<void(int)> AddThree = [=](int num)
-		{
-			num += 3;
-			printf("num+3: %d\n", num);
-		};
+	
 
 
 	//マルチスレッドの場合
