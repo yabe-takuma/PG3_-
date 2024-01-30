@@ -17,10 +17,6 @@ void thread3()
 }
 
 int main() {
-	int num = 3;
-
-	
-
 
 	//マルチスレッドの場合
 	std::thread th1(thread1);
