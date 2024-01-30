@@ -20,12 +20,13 @@ int main() {
 
 	//マルチスレッドの場合
 	std::thread th1(thread1);
-	th1.join();
 	std::thread th2(thread2);
-	th2.join();
 	std::thread th3(thread3);
-	th3.join();
 	
+	
+	th1.join();
+	th2.join();
+	th3.join();
 
 	return 0;
 }
