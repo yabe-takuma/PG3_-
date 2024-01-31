@@ -1,11 +1,13 @@
 #include<stdio.h>
-#include<list>
+#include<vector>
 #include <iostream>
+#include<algorithm>
+
 
 using namespace std;
 
 int main() {
-	list<const char*> jy = { "k022g0108@g.neec.ac.jp", "k022g0045@g.neec.ac.jp", "k022g0007@g.neec.ac.jp", "k022g0015@g.neec.ac.jp", "k022g0028@g.neec.ac.jp",
+	vector<const char*> address = { "k022g0108@g.neec.ac.jp", "k022g0045@g.neec.ac.jp", "k022g0007@g.neec.ac.jp", "k022g0015@g.neec.ac.jp", "k022g0028@g.neec.ac.jp",
 		"k022g0049@g.neec.ac.jp", "k022g0003@g.neec.ac.jp", "k022g0044@g.neec.ac.jp", "k022g0072@g.neec.ac.jp", "k022g0055@g.neec.ac.jp", "k021g1139@g.neec.ac.jp",
 		"k021g1485@g.neec.ac.jp", "k021g1162@g.neec.ac.jp", "k021g1278@g.neec.ac.jp", "k020g1229@g.neec.ac.jp", "k020g1202@g.neec.ac.jp", "k020g1215@g.neec.ac.jp",
 		"k020g1416@g.neec.ac.jp", "k020g1245@g.neec.ac.jp", "k020g1506@g.neec.ac.jp", "k020g1401@g.neec.ac.jp", "k022g0089@g.neec.ac.jp", "k022g0107@g.neec.ac.jp",
@@ -25,6 +27,24 @@ int main() {
 		"k022g0111@g.neec.ac.jp", "k022g0094@g.neec.ac.jp", "k022g0128@g.neec.ac.jp", "k022g0109@g.neec.ac.jp", "k022g0124@g.neec.ac.jp", "k022g0084@g.neec.ac.jp",
 		"k022g0082@g.neec.ac.jp", "k022g0122@g.neec.ac.jp", "k022g0061@g.neec.ac.jp", "k022g0031@g.neec.ac.jp", "k022g0076@g.neec.ac.jp", "k022g0002@g.neec.ac.jp",
 		"k022g0090@g.neec.ac.jp", "k022g0074@g.neec.ac.jp", "k022g0012@g.neec.ac.jp", "k022g0001@g.neec.ac.jp" };
+
+	cout << "全要素を表示します" << endl;
+	//全要素を表示
+	for (int i = 0; i < address.size(); i++)
+	{
+		cout << address[i] << endl;
+	}
+
+	//昇順に並び替え
+	sort(address.begin(), address.end());
+
+	cout << "全要素を表示します" << endl;
+	//全要素を表示
+	for (int i = 0; i < address.size(); i++)
+	{
+		cout << address[i] << endl;
+	}
+
 
 	return 0;
 }
