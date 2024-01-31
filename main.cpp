@@ -2,12 +2,13 @@
 #include<vector>
 #include <iostream>
 #include<algorithm>
-
+#include<tuple>
+#include<string>
 
 using namespace std;
 
 int main() {
-	vector<const char*> address = { "k022g0108@g.neec.ac.jp", "k022g0045@g.neec.ac.jp", "k022g0007@g.neec.ac.jp", "k022g0015@g.neec.ac.jp", "k022g0028@g.neec.ac.jp",
+	vector<string> address ={"k022g0108@g.neec.ac.jp", "k022g0045@g.neec.ac.jp", "k022g0007@g.neec.ac.jp", "k022g0015@g.neec.ac.jp", "k022g0028@g.neec.ac.jp",
 		"k022g0049@g.neec.ac.jp", "k022g0003@g.neec.ac.jp", "k022g0044@g.neec.ac.jp", "k022g0072@g.neec.ac.jp", "k022g0055@g.neec.ac.jp", "k021g1139@g.neec.ac.jp",
 		"k021g1485@g.neec.ac.jp", "k021g1162@g.neec.ac.jp", "k021g1278@g.neec.ac.jp", "k020g1229@g.neec.ac.jp", "k020g1202@g.neec.ac.jp", "k020g1215@g.neec.ac.jp",
 		"k020g1416@g.neec.ac.jp", "k020g1245@g.neec.ac.jp", "k020g1506@g.neec.ac.jp", "k020g1401@g.neec.ac.jp", "k022g0089@g.neec.ac.jp", "k022g0107@g.neec.ac.jp",
@@ -38,13 +39,42 @@ int main() {
 	//昇順に並び替え
 	sort(address.begin(), address.end());
 
-	cout << "全要素を表示します" << endl;
+	cout << "全要素を整理して表示します" << endl;
 	//全要素を表示
 	for (int i = 0; i < address.size(); i++)
 	{
 		cout << address[i] << endl;
 	}
 
+	/*int num[6] = { 11,2,8,720,7,4 };
+
+	sort(begin(num), end(num));
+
+	for (int item: num) {
+		cout << item << endl;
+	}*/
+
+
+
+	/*struct Person {
+		
+		const char* name;
+	};
+
+	struct PersonLess {
+		bool operator()(const Person& a, const Person& b) const noexcept {
+			return tie(a.name) < tie(b.name);
+		}
+	};
+
+	vector<Person> v2 = { "Carol" };
+
+	sort(v2.begin(), v2.end(),PersonLess{});
+
+	for (const char*x : v2)
+	{
+		cout << x.name << endl;
+	}*/
 
 	return 0;
 }
